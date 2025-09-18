@@ -58,7 +58,7 @@ const ProjectsSection = () => {
                   height={900}
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute flex items-center justify-center gap-1 top-2 right-2">
+                <div className="absolute flex w-full flex-wrap items-center justify-end gap-1 top-2 right-2">
                   {
                     project.type.map(type => <div key={type} className={`${buttonVariants({size: "sm"})}`}>{type}</div>)
                   }
