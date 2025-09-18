@@ -29,6 +29,9 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-glow: var(--primary-glow);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -59,6 +62,9 @@
     --primary: hsl(262 83% 69%);
     --primary-foreground: hsl(0 0% 100%);
     --primary-glow: hsl(262 83% 80%);
+
+    --warning: hsl(52, 85%, 53%);
+    --warning-foreground: hsl(52 90% 70%);
 
     /* Secondary - Gris clair */
     --secondary: hsl(210 20% 96%);

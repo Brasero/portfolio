@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -8,6 +8,29 @@ import logo from "../../public/digicci-logo-dark.svg";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("accueil");
+  
+  useEffect(() => {
+   
+    const handleScroll = () => {
+      const sections = ["accueil", "realisations", "contact"];
+      const scrollPosition = window.scrollY + 100;
+      if (scrollPosition < 150) {
+        setActiveSection("accueil");
+        return;
+      }
+      sections.forEach((section) => {
+        const elem = document.getElementById(section);
+        if (elem) {
+          const {offsetTop, offsetHeight} = elem;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+          }
+        }
+      })
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   const onSectionChange = (sectionId: string) => {
     if (sectionId === "accueil") {
