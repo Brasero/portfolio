@@ -12,9 +12,8 @@ export async function POST (req: NextRequest) {
   } catch (e) {
     return new Response(JSON.stringify(e), {status: 400})
   }
-  console.log(body)
-  const {name, email, message} = body;
-  if (!name || !email || !message) {
+  
+  if (!body.name || !body.email || !body.message) {
     return new Response(JSON.stringify("Formulaire invalide"), {status: 400})
   }
   
@@ -22,7 +21,7 @@ export async function POST (req: NextRequest) {
     from: "Portfolio <noreply@winali.fr>",
     to: ['brandonricci4@gmail.com'],
     subject: "Demande de contact",
-    react: ContactEmail(name, email, message) as ReactNode
+    react: ContactEmail(body.name, body.email, body.message) as ReactNode
   })
   
   
