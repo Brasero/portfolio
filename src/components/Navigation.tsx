@@ -12,7 +12,7 @@ const Navigation = () => {
   useEffect(() => {
    
     const handleScroll = () => {
-      const sections = ["accueil", "realisations", "contact"];
+      const sections = ["accueil", "realisations", "offer", "contact"];
       const scrollPosition = window.scrollY + 100;
       if (scrollPosition < 150) {
         setActiveSection("accueil");
@@ -47,6 +47,7 @@ const Navigation = () => {
   const navItems = [
     { id: "accueil", label: "Accueil" },
     { id: "realisations", label: "Mes réalisations" },
+    { id: "offer", label: "Mon offre" },
     { id: "contact", label: "Contact" },
   ];
   
