@@ -1,4 +1,4 @@
-import {Card} from "@/components/ui/card";
+import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Pointer} from "lucide-react";
 
 const OfferSection = () => {
@@ -17,7 +17,7 @@ const OfferSection = () => {
     },
     {
       title: "Sur-Mesure",
-      description: "Développement d’applications web adaptées à vos besoins spécifiques (gestion de rendez-vous, espace client, boutique en ligne...).",
+      description: "Développement d’applications web ou/et mobile adaptées à vos besoins spécifiques (gestion de rendez-vous, espace client, boutique en ligne...).",
       advantage: "Idéal pour aller plus loin et gagner du temps dans votre activité.",
       pricing: "👉 Sur devis."
     }
@@ -25,7 +25,7 @@ const OfferSection = () => {
   ]
   
   return (
-    <div id="offer" className="min-h-screen py-20 px-6 bg-gradient-to-b from-primary/20 via-primary-glow/20 to-primary-glow/5">
+    <div id="offer" className="min-h-screen py-20 px-6 bg-gradient-to-b from-primary/20 via-primary-glow/20 to-transparent">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -43,16 +43,43 @@ const OfferSection = () => {
             return (
               <Card
                 key={i}
-                className="group overflow-hidden border-0 shadow-card py-2 px-4"
+                className="group overflow-hidden border-0 shadow-sm"
                 style={{animationDelay: `${i * 0.1}s`}}
               >
-                <h4 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground flex items-end mb-1"><Pointer style={{rotate:"90deg", scale:0.7}} className={"text-primary mr-2"} />{o.title}</h4>
-                <p className="text-sm text-muted-foreground">{o.description}</p>
-                <p className="text-sm text-muted-foreground font-bold">{o.advantage}</p>
-                <p className="text-lg text-primary font-bold mb-2">{o.pricing}</p>
+                <CardHeader>
+                  <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold text-foreground flex items-end mb-1"><Pointer style={{rotate:"90deg", scale:0.7}} className={"text-primary mr-2"} />{o.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{o.description}</p>
+                  <p className="text-sm text-muted-foreground font-bold">{o.advantage}</p>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-lg text-primary font-bold mb-2">{o.pricing}</p>
+                </CardFooter>
               </Card>
             )
           })}
+        </div>
+        <div className="flex items-center justify-center mt-18">
+          <Card
+            className="group overflow-hidden border-0 shadow-sm py-5 px-4"
+            style={{animationDelay: "0.5s"}}
+          >
+            <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold text-primary flex items-center justify-center">✅ Ce que vous obtenez avec moi</CardTitle>
+            <CardContent>
+              <ul className="text-sm text-muted-foreground">
+                <li className="space-y-1 list-disc list-inside">Un site <b>responsive</b> (ordinateur, tablette,
+                  mobile).
+                </li>
+                <li className="space-y-1 list-disc list-inside">Un <b>design moderne</b> qui met en valeur votre
+                  savoir-faire.
+                </li>
+                <li className="space-y-1 list-disc list-inside">Un site <b>optimisé pour Google.</b></li>
+                <li className="space-y-1 list-disc list-inside">Une <b>mise en ligne rapide</b> et un <b>accompagnement personnalisé</b>.</li>
+                <li className="space-y-1 list-disc list-inside">Une relation basée sur l&apos;<b>écoute</b> et la <b>transparence</b>.</li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
