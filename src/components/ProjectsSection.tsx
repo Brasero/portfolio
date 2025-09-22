@@ -31,7 +31,7 @@ const ProjectsSection = () => {
   ];
   
   return (
-    <section id="realisations" className="py-20 px-6 bg-gradient-to-b from-background to-muted/20">
+    <section id="realisations" className="py-20 px-6 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
