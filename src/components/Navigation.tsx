@@ -67,7 +67,7 @@ const Navigation = () => {
               className="text-2xl font-semibold text-foreground cursor-pointer"
               onClick={() => handleSectionClick("accueil")}
             >
-              Portfolio
+              Digicci
             </div>
           </div>
           
